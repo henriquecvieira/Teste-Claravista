@@ -27,4 +27,4 @@ app.all('*', (_, res) => res.status(404).json({ message: 'Not found!' }))
 
 app.listen(process.env.PORT, () => {
   console.log('Hello World!')
-}) 
+})

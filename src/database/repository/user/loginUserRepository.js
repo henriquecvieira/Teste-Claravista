@@ -2,12 +2,9 @@ import User from '../../../models/User.js'
 import * as bcrypt from 'bcrypt'
 import token from '../../../middleware/token/token.js'
 
-
-
 export default {
   execute: async (user) => {
     try {
-
       const searchUser = await User.find({ email: user.email }).select('+password')
 
       if (!searchUser) {
