@@ -6,7 +6,7 @@ dotenv.config()
 export default {
   connectToDatabase: () => {
     mongoose.connect(
-      process.env.DATABASE_URL,
+      process.env.MONGO_URL,
       {},
       error => {
         const message = error

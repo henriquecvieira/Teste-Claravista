@@ -23,6 +23,5 @@ routes.get('/searchAllProduction', validateAuth.auth, validateSearchProduction.e
 routes.get('/milkProduction', validateAuth.auth, validateMilkProduction.execute, productionController.milkProduction)
 routes.get('/avgProduction', validateAuth.auth, validateAvgProduction.execute, productionController.averageProduction)
 routes.get('/avgYearProduction', validateAuth.auth, validateAvgYearProduction.execute, productionController.milkAvgYearProduction)
-// routes.get('/milkVolume', validateAuth.auth, productionController.milkVolume)
 
 export default routes
