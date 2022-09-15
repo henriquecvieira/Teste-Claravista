@@ -1,7 +1,9 @@
+import addFormats from 'ajv-formats'
 import Ajv from 'ajv'
 import validateRegister from '../validateSchema/registerSchema.js'
 
 const ajv = new Ajv({ allErrors: true })
+addFormats(ajv)
 
 export default {
   execute: (req, res, next) => {

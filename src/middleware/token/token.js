@@ -6,8 +6,7 @@ dotenv.config()
 const generationToken = (params) => {
   const token = jwt.sign(
     {
-      _id: params.user._id,
-      farmerCod: params.user.farmerCod
+      params
     },
     process.env.SECRET,
     { expiresIn: Number(process.env.EXPIRES) }
