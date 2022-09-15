@@ -1,19 +1,20 @@
 export default {
   execute: async (dateYear, dateMonth, farmCod) => {
     return [
-      { $match: { farmCod } },
       {
-        $match: {
-          $and: [{ createdAt: { $gte: new Date(dateYear, dateMonth - 1, 1) } },
-            { createdAt: { $lte: new Date(dateYear, dateMonth, 0) } }]
+        _id: UUID("48b17b87-0254-413d-9371-35e74b1955ee")
+    },
+    {
+        $push: {
+            testePush: 
+            {
+                name: 'Henrique'
+            }
+        },
+        $set : {
+          updated_at : 'HOJE'
         }
-      }, {
-        $group: {
-          _id: '',
-          sum: { $sum: '$diaryMilkProduction' },
-          count: { $sum: 1 }
-        }
-      }
+    }
     ]
   }
 }
