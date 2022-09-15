@@ -9,8 +9,8 @@ import NavigationDelete from '../controllers/NavigationDelete.js'
 const routes = express.Router()
 
 routes.post('/navigation', Navigation.navigation)
-routes.get('/navigationsession', NavigationSession.navigationSession)
-routes.get('/navigationhash', NavigationHash.navigationHash)
+routes.get('/navigation/session_id', NavigationSession.navigationSession)
+routes.get('/navigation', NavigationHash.navigationHash)
 routes.delete('/navigationdelete', NavigationDelete.navigationDelete)
 // routes.get('/navigation?session_id', validateAuth.auth, validateAvgProduction.execute, productionController.averageProduction)
 // routes.get('/navigation?hash_user', validateAuth.auth, validateAvgYearProduction.execute, productionController.milkAvgYearProduction)

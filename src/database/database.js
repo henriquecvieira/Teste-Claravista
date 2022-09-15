@@ -11,7 +11,7 @@ export default {
       error => {
         const message = error
           ? `falha ao conectar no mmongo ${error}`
-          : 'conectado ao MONGO com sucesso'
+          : '⚡️ MongoDB connection established successfully'
         console.log(message)
       }
     )

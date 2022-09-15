@@ -3,7 +3,7 @@ import navigationHashRepository from '../database/repository/user/navigationHash
 export default {
   navigationHash: async (req, res) => {
     try {
-      const nav = req.body
+      const nav = req.query
       const result = await navigationHashRepository.execute(nav)
       if (result.error) {
         return res.status(result.status).json(result)
