@@ -16,8 +16,9 @@ PORT=3000
 SECRET=senha para gerar token
 EXPIRES=86400
 ```
-e chamada no projeto através do comando `process.env` (ex. `process.env.MONGO_URL`).
+
 - Preencha a URL de conexão ao seu banco do MongoDB na primeira linha o arquivo `.env`.
+          inserindo o comando `process.env` (ex. `process.env.MONGO_URL`).
 
 - Na raíz, instale o restante das dependências do projeto através do comando `npm install`.
 
