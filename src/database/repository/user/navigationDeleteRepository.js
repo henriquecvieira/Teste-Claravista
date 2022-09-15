@@ -7,12 +7,14 @@ import Navigation from '../../../models/Navigation.js'
 export default {
   execute: async (nav) => {
     try {
-      // const search = await Navigation.findOne( nav[0].session_id )
-      const search = await Navigation.find({ session_id: 2 })
-      if (!search) {
-        return (search.status).json(search)
+      const search = await Navigation.find({ session_id: nav.session_id })
+      if (search.length > 0) {
+        const refresh = await Navigation.deleteOne({ session_id: 2 })
+        if (refresh?.deletedCount === 1) {
+          return { message: 'registro deletado com sucesso' }
+        }
+        return { error: 'não foi possivel deletar', status: 500 }
       }
-      return search
     } catch (error) {
       return { error, status: 500 }
     }
