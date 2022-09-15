@@ -33,7 +33,7 @@ const schema = new Schema({
     type: Date,
     default: () => Date.now()
   },
-  navgiations: [{
+  navigations: [{
     url: {
       type: String
     },
@@ -44,7 +44,7 @@ const schema = new Schema({
       type: String
     },
     navigated_in: {
-      type: Date
+      type: String
     }
   }],
   _id: {

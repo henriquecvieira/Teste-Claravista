@@ -1,23 +1,23 @@
 export default {
-  execute: async (url, url_base, endpoint, created_at, session_id) => {
-    return [
+  execute: async (nav) => {
+    return (
       {
-        session_id
+        session_id: nav.session_id
       },
       {
         $push: {
           navigations:
-            {
-              url,
-              url_base,
-              endpoint,
-              navigated_in: created_at
-            }
+          {
+            url: nav.url,
+            url_base: nav.url_base,
+            endpoint: nav.endpoint,
+            navigated_in: nav.created_at
+          }
         },
         $set: {
           updated_at: Date.now()
         }
       }
-    ]
+    )
   }
 }
