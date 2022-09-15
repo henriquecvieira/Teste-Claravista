@@ -9,7 +9,7 @@
 - Certifique-se que tem as dependências [npm](https://www.npmjs.com/) (>= 6.x) e [Node.js](https://nodejs.org/) (>= 14.x) instaladas localmente.
 - Este projeto utiliza Node.js com [javascript](https://www.javascript.com/).
 - Tenha uma conexão com um banco de dados [MongoDB](https://www.mongodb.com/).
-- Crie um arquivo `.env` na raíz do projeto e copie os conteúdos do arquivo `.env.example`. Qualquer variável de ambiente deve ser declarada neste arquivo abaixo:
+- Crie um arquivo `.env` na raíz do projeto e copie e cole os conteúdos do arquivo `.env.example`abaixo:
 ```sh
 MONGO_URL=mongodb://localhost:27017/testeClaravista
 PORT=3000
