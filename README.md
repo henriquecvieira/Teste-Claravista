@@ -15,7 +15,7 @@ MONGO_URL=mongodb://localhost:27017/testeClaravista
 PORT=3000
 SECRET=senha para gerar token
 EXPIRES=86400
-API_URL=localhost:3333
+API_URL=localhost:3000
 ```
 
 - Preencha a URL de conexão ao seu banco do MongoDB na primeira linha o arquivo `.env`.
