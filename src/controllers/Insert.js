@@ -1,10 +1,10 @@
-import navigationRepository from '../database/repository/user/navigationRepository.js'
+import repository from '../database/repository/user/insertRepository.js'
 
 export default {
-  navigation: async (req, res) => {
+  execute: async (req, res) => {
     try {
       const nav = req.body
-      const result = await navigationRepository.execute(nav)
+      const result = await repository.execute(nav)
       if (result.error) {
         return res.status(result.status).json(result)
       }

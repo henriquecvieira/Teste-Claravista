@@ -1,10 +1,10 @@
-import navigationDeleteRepository from '../database/repository/user/navigationDeleteRepository.js'
+import repository from '../database/repository/user/searchByHashUserRepository.js'
 
 export default {
-  navigationDelete: async (req, res) => {
+  execute: async (req, res) => {
     try {
-      const nav = req.body
-      const result = await navigationDeleteRepository.execute(nav.session_id)
+      const nav = req.query
+      const result = await repository.execute(nav)
       if (result.error) {
         return res.status(result.status).json(result)
       }

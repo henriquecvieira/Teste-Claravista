@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Teste 2</title>
+</head>
+
+<body>
+
+    <button onclick="api()">API</button><button onclick="mostraAPI()">Mostrar Cookie</button>
+    <label id="lblCookie">...</label>
+
+</body>
+
+</html>
+
+<script>
+    function api() {
+        /// *** CONSULTA DE UFs
+        var settings = {
+            "url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome",
+            "method": "GET",
+            "timeout": 0,
+        };
+        let value = "";
+        $.ajax(settings).done(function (response) {
+            console.table(response);
+            $.each(response, function (indice, element) {
+                value += element.sigla + ' | ';
+            });
+            console.log(value);
+            checkCookie('cookieAPI2', ':: ' + value + ' ::');
+        });
+    }
+
+
+    function checkCookie(nome, valor) {
+        // Cria uma data 01/01/2020
+        var data = Date.now();
+        // Converte a data para GMT
+        data = data.toGMTString();
+        // Codifica o valor do cookie para evitar problemas
+        valor = encodeURI(valor);
+        // Cria o novo cookie
+        document.cookie = nome + '=' + valor + '; expires=' + data + '; path=/';
+        //document.cookie = nome +'='+valor+'; path=/';
+
+    }
+
+    function mostra_cookie(nome_cookie) {
+        // Adiciona o sinal de = na frente do nome do cookie
+        var cname = ' ' + nome_cookie + '=';
+
+        // Obtém todos os cookies do documento
+        var cookies = document.cookie;
+
+        // Verifica se seu cookie existe
+        if (cookies.indexOf(cname) == -1) {
+            return false;
+        }
+
+        // Remove a parte que não interessa dos cookies
+        cookies = cookies.substr(cookies.indexOf(cname), cookies.length);
+
+        // Obtém o valor do cookie até o ;
+        if (cookies.indexOf(';') != -1) {
+            cookies = cookies.substr(0, cookies.indexOf(';'));
+        }
+
+        // Remove o nome do cookie e o sinal de =
+        cookies = cookies.split('=')[1];
+        // Retorna apenas o valor do cookie
+        return decodeURI(cookies);
+
+    }
+
+    function mostraAPI() {
+        let teste = mostra_cookie('cookieAPI2');
+        $('#lblCookie').empty();
+        $('#lblCookie').append("cookie: " + teste);
+    }
+
+</script>

@@ -1,10 +1,10 @@
-import navigationSessionRepository from '../database/repository/user/navigationSessionRepository.js'
+import repository from '../database/repository/user/deleteRepository.js'
 
 export default {
-  navigationSession: async (req, res) => {
+  execute: async (req, res) => {
     try {
       const nav = req.body
-      const result = await navigationSessionRepository.execute(nav.session_id)
+      const result = await repository.execute(nav.session_id)
       if (result.error) {
         return res.status(result.status).json(result)
       }

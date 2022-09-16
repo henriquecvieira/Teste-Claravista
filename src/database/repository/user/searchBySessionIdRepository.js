@@ -1,4 +1,5 @@
 import Navigation from '../../../models/Navigation.js'
+
 // import passwordHash from '../../../useCases/passwordHash.js'
 // import token from '../../../middleware/token/token.js'
 // import { v4 as uuidv4 } from 'uuid'
@@ -7,8 +8,7 @@ import Navigation from '../../../models/Navigation.js'
 export default {
   execute: async (nav) => {
     try {
-      // const search = await Navigation.findOne( nav[0].session_id )
-      const search = await Navigation.find({ hash_user: nav.hash_user })
+      const search = await Navigation.find({ session_id: nav.session_id })
       if (!search) {
         return (search.status).json(search)
       }

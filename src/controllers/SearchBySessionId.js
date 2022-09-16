@@ -1,10 +1,10 @@
-import navigationHashRepository from '../database/repository/user/navigationHashRepository.js'
+import repository from '../database/repository/user/searchBySessionIdRepository.js'
 
 export default {
-  navigationHash: async (req, res) => {
+  execute: async (req, res) => {
     try {
       const nav = req.query
-      const result = await navigationHashRepository.execute(nav)
+      const result = await repository.execute(nav)
       if (result.error) {
         return res.status(result.status).json(result)
       }

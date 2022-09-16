@@ -2,7 +2,7 @@ export default {
   execute: async (nav) => {
     return (
       {
-        session_id: nav.session_id
+        session_id: { $eq: nav.session_id }
       },
       {
         $push: {

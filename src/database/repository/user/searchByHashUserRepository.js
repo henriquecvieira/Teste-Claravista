@@ -7,8 +7,7 @@ import Navigation from '../../../models/Navigation.js'
 export default {
   execute: async (nav) => {
     try {
-      // const search = await Navigation.findOne( nav[0].session_id )
-      const search = await Navigation.find({ session_id: 3 })
+      const search = await Navigation.find({ hash_user: nav.hash_user })
       if (!search) {
         return (search.status).json(search)
       }
