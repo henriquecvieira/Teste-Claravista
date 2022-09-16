@@ -50,6 +50,9 @@ const schema = new Schema({
   _id: {
     type: String,
     default: () => uuidv4()
+  },
+  isDeleted: {
+    Type: Boolean
   }
 
 })

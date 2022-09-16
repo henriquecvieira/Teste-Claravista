@@ -9,8 +9,10 @@ export default {
     try {
       const search = await Navigation.find({ session_id: nav.session_id })
       if (search.length > 0) {
-        const refresh = await Navigation.deleteOne({ session_id: 2 })
-        if (refresh?.deletedCount === 1) {
+        const refresh = await Navigation.updateOne({ session_id: nav.session_id }, {
+          $set: { isDeleted: true }
+        })
+        if (refresh?.modifiedCount === 1) {
           return { message: 'registro deletado com sucesso' }
         }
         return { error: 'não foi possivel deletar', status: 500 }

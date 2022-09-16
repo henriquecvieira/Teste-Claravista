@@ -9,8 +9,8 @@ import deleteController from '../controllers/Delete.js'
 const routes = express.Router()
 
 routes.post('/navigation', insertController.execute)
-routes.get('/navigation', searchBySessionIdController.execute)
-routes.get('/navigation', searchByHashUserController.execute)
+routes.get('/navigationsession', searchBySessionIdController.execute)
+routes.get('/navigationhash', searchByHashUserController.execute)
 routes.delete('/navigation', deleteController.execute)
 
 export default routes

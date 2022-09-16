@@ -3,8 +3,8 @@ import repository from '../database/repository/user/deleteRepository.js'
 export default {
   execute: async (req, res) => {
     try {
-      const nav = req.body
-      const result = await repository.execute(nav.session_id)
+      const nav = req.query
+      const result = await repository.execute(nav)
       if (result.error) {
         return res.status(result.status).json(result)
       }
