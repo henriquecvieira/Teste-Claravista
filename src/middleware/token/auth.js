@@ -11,7 +11,7 @@ const auth = async function (req, res, next) {
   const result = await validateToken(authToken)
 
   if (result?.status === 'authenticate') {
-    req.body.farmerCod = result.farmerCod
+    req.body.session_id = result.session_id
     next()
   } else {
     res.status(result.code).json({ err: 'Não autorizado' })
@@ -34,8 +34,8 @@ const validateToken = async function (params) {
           }
         } else {
           resultValidate = {
-            status: 'authenticate',
-            farmerCod: data.farmerCod
+            status: 'authenticate'
+
           }
         }
       })

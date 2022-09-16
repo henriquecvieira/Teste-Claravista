@@ -1,7 +1,13 @@
-import User from './paths/user.js'
-
+import insert from './paths/insert.js'
+import searchBySessionId from './paths/searchBySessionId.js'
+import searchByHashUser from './paths/searchByHashUser.js'
+import Delete from './paths/Delete.js'
 const paths = Object.assign(
-  User
+  insert,
+  searchBySessionId,
+  searchByHashUser,
+  Delete
+
 )
 
 export default paths

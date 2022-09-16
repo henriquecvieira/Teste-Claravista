@@ -15,7 +15,7 @@ export default {
         if (refresh?.modifiedCount === 1) {
           return { message: 'registro deletado com sucesso' }
         }
-        return { error: 'não foi possivel deletar', status: 500 }
+        return { error: 'não há registro com esse código', status: 404 }
       }
     } catch (error) {
       return { error, status: 500 }
