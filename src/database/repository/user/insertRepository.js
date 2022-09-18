@@ -1,7 +1,6 @@
 import Navigation from '../../../models/Navigation.js'
 import token from '../../../middleware/token/token.js'
 
-
 export default {
   execute: async (nav) => {
     try {
