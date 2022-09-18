@@ -1,8 +1,6 @@
 import Navigation from '../../../models/Navigation.js'
 import token from '../../../middleware/token/token.js'
-// import query from '../../../database/query/updateQueryNavigation.js'
-// import passwordHash from '../../../useCases/passwordHash.js'
-// import { v4 as uuidv4 } from 'uuid'
+
 
 export default {
   execute: async (nav) => {
@@ -32,7 +30,7 @@ export default {
         return { error: 'não foi possivel cadastrar', status: 500 }
       }
       const result = await Navigation.create(nav)
-      const tokenGeneration = token.generationToken({ navigation: result })
+      const tokenGeneration = token.generationToken({ navigation: result.hash_user })
       const resultToken = {
         token: tokenGeneration
       }

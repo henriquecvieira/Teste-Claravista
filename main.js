@@ -4,12 +4,15 @@ import dotenv from 'dotenv'
 import database from './src/database/database.js'
 import swaggerUi from 'swagger-ui-express'
 import swaggerDocument from './src/documents/swagger.js'
+import cors from 'cors'
 
 database.connectToDatabase()
 
 dotenv.config()
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 app.use('/v1', Routes)
@@ -28,9 +31,3 @@ app.all('*', (_, res) => res.status(404).json({ message: 'Not found!' }))
 app.listen(process.env.PORT, () => {
   console.log('Hello World!')
 })
-
-function testApi() {
-  fetch('https://localhost:3333')
-  .then((response) => response.json())
-  .then((data))    
-  }
