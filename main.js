@@ -14,7 +14,7 @@ const app = express()
 app.use(express.json())
 app.use('/v1', Routes)
 
-app.use('/v1/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
   swaggerOptions: {
     defaultModelsExpandDepth: -1,
     docExpansion: 'none'

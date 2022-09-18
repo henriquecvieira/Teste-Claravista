@@ -7,9 +7,9 @@ import validateNavigationController from '../middleware/validateRoutes/validateN
 
 const routes = express.Router()
 
-routes.post('/navigation', validateNavigationController.execute, insertController.execute)
-routes.get('/navigationsession', searchBySessionIdController.execute)
-routes.get('/navigationhash', searchByHashUserController.execute)
-routes.delete('/navigationdelete', deleteController.execute)
+routes.post('/insert', validateNavigationController.execute, insertController.execute)
+routes.get('/session_id', searchBySessionIdController.execute)
+routes.get('/hash_user', searchByHashUserController.execute)
+routes.delete('/delete', deleteController.execute)
 
 export default routes
