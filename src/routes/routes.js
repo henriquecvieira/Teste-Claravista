@@ -1,15 +1,15 @@
 import express from 'express'
-import Navigation from '../controllers/Navigation.js'
-import NavigationSession from '../controllers/NavigationSession.js'
-// import validateRegister from '../middleware/validateRoutes/validateRegister.js'
-// import validateAuth from '../middleware/token/auth.js'
+import insertController from '../controllers/Insert.js'
+import searchBySessionIdController from '../controllers/SearchBySessionId.js'
+import searchByHashUserController from '../controllers/SearchByHashUser.js'
+import deleteController from '../controllers/Delete.js'
+import validateNavigationController from '../middleware/validateRoutes/validateNavigationController.js'
 
 const routes = express.Router()
 
-routes.post('/navigation', Navigation.navigation)
-routes.get('/navigationSession', NavigationSession.navigationSession)
-// routes.get('/navigation?session_id', validateAuth.auth, validateAvgProduction.execute, productionController.averageProduction)
-// routes.get('/navigation?hash_user', validateAuth.auth, validateAvgYearProduction.execute, productionController.milkAvgYearProduction)
-// routes.delete('/navigation/', validateAuth.auth, validateAvgYearProduction.execute, productionController.milkAvgYearProduction)
+routes.post('/navigation', validateNavigationController.execute, insertController.execute)
+routes.get('/navigationsession', searchBySessionIdController.execute)
+routes.get('/navigationhash', searchByHashUserController.execute)
+routes.delete('/navigationdelete', deleteController.execute)
 
 export default routes

@@ -1,5 +1,4 @@
 import Navigation from '../../../models/Navigation.js'
-
 // import passwordHash from '../../../useCases/passwordHash.js'
 // import token from '../../../middleware/token/token.js'
 // import { v4 as uuidv4 } from 'uuid'
@@ -8,9 +7,9 @@ import Navigation from '../../../models/Navigation.js'
 export default {
   execute: async (nav) => {
     try {
-      const search = await Navigation.find({ $and: [{ session_id: nav.session_id }, { isDeleted: { $exists: false } }] })
+      const search = await Navigation.find({ $and: [{ hash_user: nav.hash_user }, { isDeleted: { $exists: false } }] })
       if (search.length === 0) {
-        return { error: 'session_id não existe', status: 404 }
+        return { error: 'hash_user não existe', status: 404 }
       }
       return search
     } catch (error) {

@@ -28,3 +28,9 @@ app.all('*', (_, res) => res.status(404).json({ message: 'Not found!' }))
 app.listen(process.env.PORT, () => {
   console.log('Hello World!')
 })
+
+function testApi() {
+  fetch('https://localhost:3333')
+  .then((response) => response.json())
+  .then((data))    
+  }

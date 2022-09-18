@@ -4,6 +4,7 @@
     "ajv-formats": "^2.1.1",
     "bcrypt": "^5.0.1",
     "bcrypt-salt": "^1.1.12",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
@@ -14,7 +15,7 @@
     "swagger-ui-express": "^4.5.0",
     "uuid": "^8.3.2"
   },
-  "name": "bovcontrol-test",
+  "name": "teste-claravista",
   "version": "1.0.0",
   "main": "main.js",
   "type": "module",
