@@ -1,9 +1,5 @@
 import Navigation from '../../../models/Navigation.js'
 
-// import passwordHash from '../../../useCases/passwordHash.js'
-// import token from '../../../middleware/token/token.js'
-// import { v4 as uuidv4 } from 'uuid'
-// import randomInteger from 'random-int'
 
 export default {
   execute: async (nav) => {
@@ -18,3 +14,4 @@ export default {
     }
   }
 }
+
