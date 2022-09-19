@@ -1,6 +1,6 @@
 export default
 {
-  '/v1/navigation': {
+  '/v1/insert/home': {
     post: {
       summary: 'Action registration',
       description: 'Register a Action',
@@ -55,4 +55,4 @@ export default
       }
     }
   }
-
+}

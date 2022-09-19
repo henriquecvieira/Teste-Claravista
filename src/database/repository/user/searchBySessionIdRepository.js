@@ -1,6 +1,5 @@
 import Navigation from '../../../models/Navigation.js'
 
-
 export default {
   execute: async (nav) => {
     try {
@@ -14,4 +13,3 @@ export default {
     }
   }
 }
-
