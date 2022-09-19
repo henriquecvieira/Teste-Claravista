@@ -25,6 +25,9 @@ app.route('/healthcheck').get((_, res) => res.status(200).json({ msg: 'OK' }))
 
 app.all('*', (_, res) => res.status(404).json({ message: 'Not found!' }))
 
+app.listen(process.env.URL, () => {
+  console.log('⚡️ URL DOCERIA')
+})
 app.listen(process.env.PORT, () => {
   console.log('⚡️ Server is running at https://localhost:3000!')
 })
