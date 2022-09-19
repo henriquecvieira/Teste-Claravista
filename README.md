@@ -41,7 +41,9 @@ API_URL=localhost:3000
 
 ##Insomnia configurado conforme abaixo:
 
-- Rota POST localhost:3000/v1/navigation
+- Rota POST localhost:3000/v1/insert/home
+(já gerando o token apenas para demonstrar)
+
 ```sh
 {
 	"session_id": "8",
@@ -52,14 +54,17 @@ API_URL=localhost:3000
 	"created_at": "15/09/2022"	
 }
 ```
-- Rota GET localhost:3000/v1/navigationsession
-![image](https://user-images.githubusercontent.com/87788394/190690802-3452ffb7-7365-4ac6-8a28-84deeeceaa7b.png)
+![image](https://user-images.githubusercontent.com/87788394/191024207-d753d919-1f95-44ae-af72-fb39a6e5b15e.png)
+
+- Rota GET localhost:3000/v1/session_id
+![image](https://user-images.githubusercontent.com/87788394/191024498-fe8ae961-ada5-4fc3-857f-9d5e85994633.png)
 
 
-- Rota GET localhost:3000/v1/navigationhash
-![image](https://user-images.githubusercontent.com/87788394/190690923-325b4fff-af8a-4df1-8d12-375e61098f61.png)
+- Rota GET localhost:3000/v1/hash_user
+![image](https://user-images.githubusercontent.com/87788394/191024962-5e5ee31c-bedd-48c1-9052-c40e65217d2a.png)
 
-- Rota DELETE localhost:3000/v1/navigationdelete
+- Rota DELETE localhost:3000/v1/delete
+DELETE LÓGICO APENAS, O REGISTRO CONTINUA NO BANCO, PORÉM APENAS NÃO FICA MAIS VISÍVEL!!
 ![image](https://user-images.githubusercontent.com/87788394/190691054-e314ff74-b0e4-4aad-8433-4aff774a0127.png)
 
 
