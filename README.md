@@ -28,6 +28,7 @@ API_URL=localhost:3000
 - O projeto utiliza o [Nodemon](https://nodemon.io/), logo as atualizações feitas ao código durante o desenvolvimento são automaticamente capturadas, o servidor é re-criado sem intervenção manual (com exceção às alterações no arquivo `.env`. Neste caso é preciso encerrar a execução do servidor e executar o comando `npm run start` novamente).
 
 - O projeto possui documentação das rotas feita com swagger [Swagger](http://localhost:3000/documents/)
+- acesso no navegador http://localhost:3000/swagger
 
 - Caso tenha tudo ocorrido de acordo, o terminal deverá apresentar a seguinte saída:
 ```sh
@@ -65,6 +66,7 @@ API_URL=localhost:3000
 
 - Rota DELETE localhost:3000/v1/delete
 DELETE LÓGICO APENAS, O REGISTRO CONTINUA NO BANCO, PORÉM APENAS NÃO FICA MAIS VISÍVEL!!
+
 ![image](https://user-images.githubusercontent.com/87788394/190691054-e314ff74-b0e4-4aad-8433-4aff774a0127.png)
 
 
